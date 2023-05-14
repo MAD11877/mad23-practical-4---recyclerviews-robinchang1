@@ -21,14 +21,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent receivingEnd = getIntent();
-        int message = receivingEnd.getIntExtra("random", 0);
+        String message = receivingEnd.getStringExtra("name");
+        String message2 = receivingEnd.getStringExtra("desc");
 
         TextView tv = (TextView) findViewById(R.id.textView);
-        tv.setText("MAD " + message);
+        tv.setText(message);
+        TextView tv2 = (TextView) findViewById(R.id.textView2);
+        tv2.setText(message2);
 
-        User user = new User("john", "hi", 0, false);
+        int id = 0;
+
+        for (int i = 0; i < UserList.List.size(); i ++) {
+            if (UserList.List.get(i).name.equals(message)) {
+                id = i;
+            }
+        }
+
+        Toast toast = Toast.makeText(getApplicationContext(), String.valueOf(id), Toast.LENGTH_SHORT);
+        toast.show();
+        User user = UserList.List.get(id);
 
         Button followButton = findViewById(R.id.button);
+        if (user.followed == true) {
+            followButton.setText("UNFOLLOW");
+        }
+        else{
+            followButton.setText("FOLLOW");
+        }
 
         followButton.setOnClickListener(new View.OnClickListener() {
             @Override

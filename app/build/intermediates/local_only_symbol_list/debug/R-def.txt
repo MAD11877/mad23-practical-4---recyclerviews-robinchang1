@@ -1,0 +1,35 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button
+id button2
+id button5
+id button8
+id frame
+id imageView
+id imageView2
+id imageView3
+id imageView6
+id recyler
+id textView
+id textView2
+id textView3
+id textView4
+layout activity_list
+layout activity_main
+layout activity_message_group
+layout fragment_blank
+layout fragment_blank2
+layout user_view
+layout user_view2
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string hello_blank_fragment
+style Base.Theme.EmptyBase
+style Theme.EmptyBase
+xml backup_rules
+xml data_extraction_rules
